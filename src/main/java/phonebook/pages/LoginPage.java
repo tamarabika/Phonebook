@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
+import static phonebook.pages.Constants.USER_EMAIL_LP;
+import static phonebook.pages.Constants.USER_PASSWORD_LP;
 
 /**
  * Class Login page  contains all locators and methods page.
@@ -80,5 +82,14 @@ public class LoginPage extends Page {
 
     public void iSeeLoginPage() {
         $(loginTextLP).shouldHave(Condition.exist);
+    }
+
+    public void enterUseEmail() {
+        $(emailFieldLP).setValue(USER_EMAIL_LP);
+
+    }
+
+    public void enterUserPassword() {
+        $(passwordFieldLP).setValue(USER_PASSWORD_LP);
     }
 }

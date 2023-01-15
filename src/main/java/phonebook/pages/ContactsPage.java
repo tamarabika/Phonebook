@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class ContactsPage extends Page {
     // locators
-    protected static By contactsCP = By.xpath("/html/body/app-root/app-home-page/app-header/nav");
+    protected static By contactsCP = By.xpath("/html/body/app-root/app-home-page/app-header/nav/div/ul/li[1]");
     protected static By addNewContactCP = By.xpath("/html/body/app-root/app-home-page/app-header/nav/div/ul/li[2]/a");
     protected static By textCP = By.xpath("//*[@id='input-search-contact']");
     protected static By languageCP = By.xpath("//*[@id='langSelect']");
@@ -41,6 +41,9 @@ public class ContactsPage extends Page {
     protected static By savePhoneBtn = By.xpath("//*[@id='phone-add-form']/div[1]/div[2]/div[2]");
     protected static By addedPhonesNumber = By.xpath("//*[@id='items-table-phone']/tbody/tr/td[2]");
     protected static By phonesNumberField = By.xpath("//*[@id='selected-cc']");
+    protected static By searchField = By.xpath("/html/body/app-root/app-home-page/div/app-contacts/ul/li[2]");
+    protected static By accountBtn = By.xpath("//html/body/app-root/app-home-page/app-header/nav/div/div[2]/button[1]");
+    protected static By logoutBtn = By.xpath("/html/body/app-root/app-home-page/app-header/nav/div/div[2]/button[2]");
 
     // methods
     public void iSeeTextCP() {
@@ -143,5 +146,13 @@ public class ContactsPage extends Page {
     public void addNewPhoneNumber() {
 
         $(phonesNumberField).setValue(String.valueOf(faker.phoneNumber().subscriberNumber(10)));
+    }
+
+    public void contactsClick() {
+        $(contactsCP).click();
+    }
+
+    public void searchFieldFill(String fName) {
+        $(searchField).setValue(fName);
     }
 }

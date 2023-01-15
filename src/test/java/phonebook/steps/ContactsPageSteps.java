@@ -2,10 +2,14 @@ package phonebook.steps;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.List;
+
+import static com.codeborne.selenide.Selenide.open;
+import static phonebook.pages.Constants.BASE_URL_LP;
 
 /**
  * Class ContactPageSteps contains all steps page.
@@ -114,6 +118,27 @@ public class ContactsPageSteps extends BaseSteps {
         contactsPage.iClickAddNewContactCP();
         contactsPage.fillContactsData();
         contactsPage.saveBtnClick();
+    }
+
+    @When("I click Contacts")
+    public void iClickContacts() {
+        contactsPage.contactsClick();
+    }
+
+    @And("I fill data in Search Field")
+    public void iFillDataInSearchField(DataTable dataTable) {
+        List<List<String>> searchField = dataTable.asLists(String.class);
+        String fName = searchField.get(0).get(0);
+        contactsPage.searchFieldFill(fName);
+    }
+
+    @Given("I am Logged in")
+    public void iAmOnLoggedIn() {
+        open(BASE_URL_LP);
+        loginPage.enterUseEmail();
+        loginPage.enterUserPassword();
+        contactsPage = loginPage.clickOnLoginBtnLP();
+
     }
 }
 
