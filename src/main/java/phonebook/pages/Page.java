@@ -17,5 +17,3 @@ public abstract class Page {
 
     // methods
 }
-
-

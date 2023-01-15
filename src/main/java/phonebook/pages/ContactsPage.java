@@ -28,15 +28,19 @@ public class ContactsPage extends Page {
     protected static By editBtn = By.xpath("//*[@id='btn-edit-contact']");
     protected static By addPhoneNumberBtn = By.xpath("//*[@id='ngb-nav-11-panel']/app-phone/div[1]");
     protected static By addEmailBtn = By.xpath("//*[@id='ngb-nav-12-panel']/app-email/div[1]");
-    protected static By addAddressBtn = By.xpath("///*[@id='ngb-nav-13-panel']/app-address/div[1]");
+    protected static By addAddressBtn = By.xpath("//*[@id='ngb-nav-13-panel']/app-address/div[1]");
     protected static By infoTab = By.xpath("//*[@id='ngb-nav-10']");
-    protected static By phonesTab = By.xpath("///*[@id='ngb-nav-11']");
+    protected static By phonesTab = By.xpath("//*[@id='navbar-contact-details']/li[2]");
     protected static By emailsTab = By.xpath("//*[@id='ngb-nav-12']");
     protected static By addressesTab = By.xpath("//*[@id='ngb-nav-13']");
     protected static By firstNameField = By.xpath("//*[@id='edit-contact-form']/div[1]/div[2]/input");
     protected static By lastNameField = By.xpath("//*[@id='edit-contact-form']/div[2]/div[2]/input");
-    protected static By contactDescriptionField= By.xpath("//*[@id='edit-contact-form']/div[3]/div[2]/textarea");
-    protected static By saveEditBtn = By.xpath(" //*[@id='edit-contact-form']/div[4]/div[2]/div/button[2]");
+    protected static By contactDescriptionField = By.xpath("//*[@id='edit-contact-form']/div[3]/div[2]/textarea");
+    protected static By saveEditBtn = By.xpath("//*[@id='edit-contact-form']/div[4]/div[2]/div/button[2]");
+    protected static By addPhoneNumberPhonesBtn = By.xpath("//*[@id='btn-add-phone']");
+    protected static By savePhoneBtn = By.xpath("//*[@id='phone-add-form']/div[1]/div[2]/div[2]");
+    protected static By addedPhonesNumber = By.xpath("//*[@id='items-table-phone']/tbody/tr/td[2]");
+    protected static By phonesNumberField = By.xpath("//*[@id='selected-cc']");
 
     // methods
     public void iSeeTextCP() {
@@ -118,7 +122,26 @@ public class ContactsPage extends Page {
     public void contactChanged() {
         $(editBtn).shouldHave(Condition.exist);
     }
+
+    public void iSeeAddedPhonesNumber() {
+        $(addedPhonesNumber).shouldHave(Condition.exist);
+    }
+
+    public void savePhoneBtnClick() {
+        $(savePhoneBtn).shouldHave(Condition.exist);
+        $(savePhoneBtn).click();
+    }
+
+    public void addPhoneNumberClick() {
+        $(addPhoneNumberPhonesBtn).click();
+    }
+
+    public void phonesTabClick() {
+        $(phonesTab).click();
+    }
+
+    public void addNewPhoneNumber() {
+
+        $(phonesNumberField).setValue(String.valueOf(faker.phoneNumber().subscriberNumber(10)));
+    }
 }
-
-
-

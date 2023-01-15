@@ -2,14 +2,10 @@ package phonebook.steps;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.List;
-
-import static com.codeborne.selenide.Selenide.open;
-import static phonebook.pages.Constants.BASE_URL_LP;
 
 /**
  * Class ContactPageSteps contains all steps page.
@@ -78,6 +74,58 @@ public class ContactsPageSteps extends BaseSteps {
     public void iSeeTestInFirstNameField() {
         contactsPage.contactChanged();
     }
+
+    @When("I click Phones Tab")
+    public void iClickPhonesTab() {
+        contactsPage.phonesTabClick();
+    }
+
+    @When("I click Add phone number Button")
+    public void iClickAddPhoneNumberButton() {
+        contactsPage.addPhoneNumberClick();
+    }
+
+    @When("I Add new phone number")
+    public void iAddNewPhoneNumber() {
+        contactsPage.addNewPhoneNumber();
+    }
+
+    @When("I click Save phone Button")
+    public void iClickSavePhoneButton() {
+        contactsPage.savePhoneBtnClick();
+    }
+
+    @Then("I see added phones number")
+    public void iSeeAddedPhonesNumber() {
+        contactsPage.iSeeAddedPhonesNumber();
+    }
+
+    @Then("I add new Phone number in Phone book")
+    public void iAddNewPhoneNumberInPB() {
+        contactsPage.phonesTabClick();
+        contactsPage.addPhoneNumberClick();
+        contactsPage.addNewPhoneNumber();
+        contactsPage.savePhoneBtnClick();
+        contactsPage.iSeeAddedPhonesNumber();
+    }
+
+    @When("I add New Contact")
+    public void iAddNewContact() {
+        contactsPage.iClickAddNewContactCP();
+        contactsPage.fillContactsData();
+        contactsPage.saveBtnClick();
+
+    }
+
+
+//    @And("I add new contact")
+//    public void iAddNewContact(DataTable dataTable) {
+//        contactsPage.editBtnClick();
+//        List<List<String>> editForms = dataTable.asLists(String.class);
+//        String fName = editForms.get(0).get(0);
+//        contactsPage.contactDataChange(fName);
+//        contactsPage.saveEditBtnClick();
+//    }
 }
 
 
