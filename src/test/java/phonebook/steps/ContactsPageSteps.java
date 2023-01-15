@@ -114,18 +114,7 @@ public class ContactsPageSteps extends BaseSteps {
         contactsPage.iClickAddNewContactCP();
         contactsPage.fillContactsData();
         contactsPage.saveBtnClick();
-
     }
-
-
-//    @And("I add new contact")
-//    public void iAddNewContact(DataTable dataTable) {
-//        contactsPage.editBtnClick();
-//        List<List<String>> editForms = dataTable.asLists(String.class);
-//        String fName = editForms.get(0).get(0);
-//        contactsPage.contactDataChange(fName);
-//        contactsPage.saveEditBtnClick();
-//    }
 }
 
 
