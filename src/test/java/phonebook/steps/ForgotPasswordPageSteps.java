@@ -35,16 +35,19 @@ public class ForgotPasswordPageSteps extends BaseSteps {
 
     @Then("I see {} Error Message Email must be a valid email address.")
     public void iSeeErrorEmailMessage1(String msg) {
+        forgotPasswordPage.clickOnSendBtnFPP();
         forgotPasswordPage.iSeeErrorMsg1(msg);
     }
 
     @Then("I see {} Error Message Error! This user doesn't exist in our DB")
     public void iSeeErrorEmailMessage2(String msg) {
+        forgotPasswordPage.clickOnSendBtnFPP();
         forgotPasswordPage.iSeeErrorMsg2(msg);
     }
 
     @Then("I see {} Password recovery instructions have been sent")
     public void iSeeErrorMessagePasswordRecoveryInstructionsHaveBeenSent(String msg) {
+        forgotPasswordPage.clickOnSendBtnFPP();
         forgotPasswordPage.iSeeEmailMsg(msg);
     }
 }

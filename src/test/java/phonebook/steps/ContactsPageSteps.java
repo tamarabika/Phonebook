@@ -48,6 +48,7 @@ public class ContactsPageSteps extends BaseSteps {
 
     @Then("I see Contacts page")
     public void iSeeContactsPage() {
+        contactsPage = loginPage.clickOnLoginBtnLP();
         contactsPage.iSeeTextCP();
     }
 
@@ -118,6 +119,7 @@ public class ContactsPageSteps extends BaseSteps {
         contactsPage.iClickAddNewContactCP();
         contactsPage.fillContactsData();
         contactsPage.saveBtnClick();
+        contactsPage.editBtnClick();
     }
 
     @When("I click Contacts")

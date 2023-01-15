@@ -8,7 +8,6 @@ Feature: Forgot password page
   Scenario Outline: Forgot password?1 Invalid
     And I fill Email data
       | <email> |
-    And I click Send Btn
     Then I see <Error Message> Error Message Email must be a valid email address.
     Examples:
       | email | Error Message                        |
@@ -18,7 +17,6 @@ Feature: Forgot password page
   Scenario Outline: Forgot password?2 Invalid
     And I fill Email data
       | <email> |
-    And I click Send Btn
     Then I see <Error Message> Error Message Error! This user doesn't exist in our DB
     Examples:
       | email         | Error Message                            |
@@ -28,7 +26,6 @@ Feature: Forgot password page
   Scenario Outline: Forgot password?3 Valid
     And I fill Email data
       | <email> |
-    And I click Send Btn
     Then I see <Message> Password recovery instructions have been sent
     Examples:
       | email          | Message                                                          |

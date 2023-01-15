@@ -7,13 +7,11 @@ Feature: Login page
   Scenario: Valid login
     When I fill in login data
       | test@gmail.com | test@gmail.com |
-    And I click Login button
     Then I see Contacts page
 
   @Login2
   Scenario: Invalid login with Faker
     When I fill in invalid login data
-    And I click Login button
     Then I see Please check your activation or Login + Password combination
 
   @Login3

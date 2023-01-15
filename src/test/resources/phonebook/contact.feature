@@ -29,7 +29,6 @@ Feature: Contact page
   @Contact4
   Scenario: Edit contact
     When I add New Contact
-    And I click Edit Button
     And I change contacts data
       | test |
     And I click Save Edit Button

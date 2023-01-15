@@ -68,6 +68,7 @@ public class LoginPageSteps extends BaseSteps {
 
     @Then("I see Please check your activation or Login + Password combination")
     public void iSeePleaseCheckYourActivationOrLoginPasswordCombination() {
+        contactsPage = loginPage.clickOnLoginBtnLP();
         loginPage.iSeePleaseCheckYourActivationOrLoginPasswordCombinationMsg();
     }
 
