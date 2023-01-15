@@ -2,20 +2,14 @@ Feature: Contact page
 
   @Contact1
   Scenario: Pop up Add new contact
-    Given I am on Login page
-    When I fill in login data
-      | test@gmail.com | test@gmail.com |
-    And I click Login button
+    Given I am Logged in
     When I am choosing language
     And I click Add new contact
     Then I see pop up Add new contact
 
   @Contact2
   Scenario Outline: I check language with text
-    Given I am on Login page
-    When I fill in login data
-      | test@gmail.com | test@gmail.com |
-    And I click Login button
+    Given I am Logged in
     Then I see <text> language
     Examples:
       | text                    |
