@@ -1,15 +1,16 @@
 Feature: Contact page
 
+  Background:
+    Given I am Logged in
+
   @Contact1
   Scenario: Pop up Add new contact
-    Given I am Logged in
     When I am choosing language
     And I click Add new contact
     Then I see pop up Add new contact
 
   @Contact2
   Scenario Outline: I check language with text
-    Given I am Logged in
     Then I see <text> language
     Examples:
       | text                    |
@@ -20,7 +21,6 @@ Feature: Contact page
 
   @Contact3
   Scenario: Add new contact with Faker
-    Given I am Logged in
     When I click Add new contact
     And I fill contacts data
     And I click Save Button
@@ -28,8 +28,7 @@ Feature: Contact page
 
   @Contact4
   Scenario: Edit contact
-    Given I am Logged in
-   When I add New Contact
+    When I add New Contact
     And I click Edit Button
     And I change contacts data
       | test |
@@ -38,7 +37,6 @@ Feature: Contact page
 
   @Contact5
   Scenario: Add phone number
-    Given I am Logged in
     When I add New Contact
     Then I add new Phone number in Phone book
 #    And I click Add new contact

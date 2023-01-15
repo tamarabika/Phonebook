@@ -1,8 +1,10 @@
 Feature: Login page
 
+  Background:
+    Given I am on Login page
+
   @Login1
   Scenario: Valid login
-    Given I am on Login page
     When I fill in login data
       | test@gmail.com | test@gmail.com |
     And I click Login button
@@ -10,14 +12,12 @@ Feature: Login page
 
   @Login2
   Scenario: Invalid login with Faker
-    Given I am on Login page
     When I fill in invalid login data
     And I click Login button
     Then I see Please check your activation or Login + Password combination
 
   @Login3
   Scenario Outline: Invalid login1
-    Given I am on Login page
     When I fill invalid data
       | <email> | <password> |
     Then I see <Error Email Message> Message
@@ -27,21 +27,18 @@ Feature: Login page
 
   @Login4
   Scenario: Invalid login2
-    Given I am on Login page
     When I click on Email Field
     And I click on Password Field
     Then I see Message Email is required.
 
   @Login5
   Scenario: Invalid login3
-    Given I am on Login page
     When I click on Password Field
     And I click on Email Field
     Then I see Message Password is required.
 
   @Login6
   Scenario: Invalid login4
-    Given I am on Login page
     When I click on Email Field
     And I click on Password Field
     And I click on Email Field
@@ -50,7 +47,6 @@ Feature: Login page
 
   @Login7
   Scenario Outline: Invalid login5
-    Given I am on Login page
     When I fill invalid data
       | <email> | <password> |
     Then I see <Error Password Message> Messages
@@ -61,6 +57,5 @@ Feature: Login page
 
   @Login8
   Scenario: Forgot password?
-    Given I am on Login page
     When I click on Forgot password?
     Then I see Forgot password page

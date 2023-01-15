@@ -1,9 +1,11 @@
 Feature: Forgot password page
 
-  @ForgotPassword1
-  Scenario Outline: Forgot password?1 Invalid
+  Background:
     Given I am on Login page
     When I click on Forgot password?
+
+  @ForgotPassword1
+  Scenario Outline: Forgot password?1 Invalid
     And I fill Email data
       | <email> |
     And I click Send Btn
@@ -14,8 +16,6 @@ Feature: Forgot password page
 
   @ForgotPassword2
   Scenario Outline: Forgot password?2 Invalid
-    Given I am on Login page
-    When I click on Forgot password?
     And I fill Email data
       | <email> |
     And I click Send Btn
@@ -26,8 +26,6 @@ Feature: Forgot password page
 
   @ForgotPassword3
   Scenario Outline: Forgot password?3 Valid
-    Given I am on Login page
-    When I click on Forgot password?
     And I fill Email data
       | <email> |
     And I click Send Btn
@@ -38,7 +36,5 @@ Feature: Forgot password page
 
   @ForgotPassword4
   Scenario: Forgot password?4
-    Given I am on Login page
-    When I click on Forgot password?
     And I click on Already have an account?
     Then I see Login Page
