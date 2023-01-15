@@ -26,11 +26,8 @@ Feature: Contact page
 
   @Contact3
   Scenario: Add new contact with Faker
-    Given I am on Login page
-    When I fill in login data
-      | test@gmail.com | test@gmail.com |
-    And I click Login button
-    And I click Add new contact
+    Given I am Logged in
+    When I click Add new contact
     And I fill contacts data
     And I click Save Button
     Then I see Edit Button
