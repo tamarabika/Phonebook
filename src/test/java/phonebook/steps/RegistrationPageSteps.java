@@ -25,6 +25,7 @@ public class RegistrationPageSteps extends BaseSteps {
 
     @Then("I can see no Error Message")
     public void iCanSeeNoErrorMessage() {
+        contactsPage = registrationPage.clickOnSignUpBtn();
       registrationPage.iSeeNoErrorMsg();
     }
 }

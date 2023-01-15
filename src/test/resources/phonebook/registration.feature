@@ -6,5 +6,4 @@ Feature: Registration page
     And I click on Register new Account
     When I fill in registration data
       | email | password/12345 | password/12345 |
-    And I click Sign up button
     Then I can see no Error Message
