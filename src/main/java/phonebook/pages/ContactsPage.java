@@ -75,21 +75,21 @@ public class ContactsPage extends Page {
 
         $(languageCP).click();
         $(germanCP).click();
-        if (englishCP.equals("German")) {
+        if (germanCP.equals("German")) {
             $(textAddNewContactCP).shouldHave(text(text));
             return (textAddNewContactCP);
         }
 
         $(languageCP).click();
         $(ukraineCP).click();
-        if (englishCP.equals("Ukraine")) {
+        if (ukraineCP.equals("Ukraine")) {
             $(textAddNewContactCP).shouldHave(text(text));
             return (textAddNewContactCP);
         }
 
         $(languageCP).click();
         $(russianCP).click();
-        if (englishCP.equals("Russian")) {
+        if (russianCP.equals("Russian")) {
             $(textAddNewContactCP).shouldHave(text(text));
             return (textAddNewContactCP);
         }
