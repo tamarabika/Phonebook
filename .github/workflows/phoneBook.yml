@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: Get repository code
       - uses: actions/checkout@v3
-          - name: Cache deps
+        - name: Cache deps
             uses: actions/cache@v3
             with:
               path: ~/.npm
@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Get repository code
       - uses: actions/checkout@v3
-          - name: Cache deps
+       - name: Cache deps
               uses: actions/cache@v3
               with:
                 path: ~/.npm
@@ -54,7 +54,7 @@ jobs:
         run: npm ci
       - name: Build application
           run: npm run build
-            - name: Upload Artifact
+        - name: Upload Artifact
               uses: actions/upload-artifact@v3
               with:
                 path: build
@@ -70,10 +70,6 @@ jobs:
 
   print:
     runs-on: ubuntu-latest
-
     steps:
       - name: Print context
         run: echo "${{ toJSON(github.event) }}"
-
-
-
