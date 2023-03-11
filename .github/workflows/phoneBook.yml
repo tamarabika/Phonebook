@@ -24,7 +24,7 @@ jobs:
               run: npm run test
   lint:
     runs-on: ubuntu-latest
-      needs: test
+#      needs: test
       steps:
         - name: Get repository code
         - uses: actions/checkout@v3
@@ -40,7 +40,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    needs: lint
+#    needs: lint
     steps:
       - name: Get repository code
       - uses: actions/checkout@v3
@@ -65,17 +65,17 @@ jobs:
               with:
                 path: build
                 name: build-files
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get build project
-        uses: actions/download-artifact@v3
-        with:
-          name: build-files
+#  deploy:
+#    needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#      - name: Get build project
+#        uses: actions/download-artifact@v3
+#        with:
+#          name: build-files
 
-  print:
-    runs-on: ubuntu-latest
-    steps:
+    print:
+     runs-on: ubuntu-latest
+     steps:
       - name: Print context
         run: echo "${{ toJSON(github.event) }}"
