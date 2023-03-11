@@ -4,7 +4,7 @@ This is a demo project which purpose is to demonstrate the usage of Cucumber fra
 
 # Test
 
-...
+The project contains a number of tests for: login page, new user registration page, forgotten password page, contact page.
 
 # Prerequisites Software/Tools
 
