@@ -137,10 +137,10 @@ jobs:
 #                    path: workflows
 #                    name: phoneBook
 
-            print:
-              runs-on: ubuntu-latest
-              steps:
-                - name: Print context
-                  run: echo "${{ toJSON(github.event) }}"
+#            print:
+#              runs-on: ubuntu-latest
+#              steps:
+#                - name: Print context
+#                  run: echo "${{ toJSON(github.event) }}"
 
 
