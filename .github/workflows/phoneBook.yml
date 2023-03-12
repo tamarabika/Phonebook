@@ -127,15 +127,15 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-        deploy:
+#        deploy:
 #           needs: build
-            runs-on: ubuntu-latest
-           steps:
-              - name: Get deploy project
-                  uses: actions/download-artifact@v3
-                  with:
-                    path: workflows
-                    name: phoneBook
+#            runs-on: ubuntu-latest
+#           steps:
+#              - name: Get deploy project
+#                  uses: actions/download-artifact@v3
+#                  with:
+#                    path: workflows
+#                    name: phoneBook
 
             print:
               runs-on: ubuntu-latest
