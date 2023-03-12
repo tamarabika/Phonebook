@@ -19,17 +19,17 @@ jobs:
                    java-version: '11'
                    distribution: 'temurin'
                    cache: maven
-        - name: Cache deps
-              uses: actions/cache@v3
-              with:
-                path: ~/.npm
-                key: node-modules-${{ hashFiles('**/package-lock.json') }}
-              - name: Install dependencies
-                run: npm ci
-              - name: Test project
-                  run: npm run test
-                 cache: maven
-                 - name: Build with Maven
+#        - name: Cache deps
+#              uses: actions/cache@v3
+#              with:
+#                path: ~/.npm
+#                key: node-modules-${{ hashFiles('**/package-lock.json') }}
+#              - name: Install dependencies
+#                run: npm ci
+#              - name: Test project
+#                  run: npm run test
+#                 cache: maven
+                 - name: Test with Maven
                            run: mvn -B package --file pom.xml
 
   lint:
@@ -44,17 +44,17 @@ jobs:
                     java-version: '11'
                     distribution: 'temurin'
                     cache: maven
-          - name: Cache deps
-                uses: actions/cache@v3
-                with:
-                  path: ~/.npm
-                  key: node-modules-${{ hashFiles('**/package-lock.json') }}
-        - name: Install dependencies
-          run: npm ci
-        - name: Lint project
-          run: npm run lint
-          cache: maven
-         - name: Build with Maven
+#          - name: Cache deps
+#                uses: actions/cache@v3
+#                with:
+#                  path: ~/.npm
+#                  key: node-modules-${{ hashFiles('**/package-lock.json') }}
+#        - name: Install dependencies
+#          run: npm ci
+#        - name: Lint project
+#          run: npm run lint
+#          cache: maven
+         - name: Lint with Maven
            run: mvn -B package --file pom.xml
 
   build:
@@ -69,21 +69,21 @@ jobs:
                   java-version: '11'
                   distribution: 'temurin'
                   cache: maven
-      - name: Install dependencies
-        run: npm ci
-      - name: Build project
-          run: npm run build
-         - name: Upload Artifact
-                uses: actions/upload-artifact@v3
-                with:
-                  path: workflows
-                  name: build-files
-      - name: Cache deps
-        uses: actions/cache@v3
-          with:
-          path: ~/.npm
-          key: node-modules-${{ hashFiles('**/package-lock.json') }}
-        cache: maven
+#      - name: Install dependencies
+#        run: npm ci
+#      - name: Build project
+#          run: npm run build
+#         - name: Upload Artifact
+#                uses: actions/upload-artifact@v3
+#                with:
+#                  path: workflows
+#                  name: build-files
+#      - name: Cache deps
+#        uses: actions/cache@v3
+#          with:
+#          path: ~/.npm
+#          key: node-modules-${{ hashFiles('**/package-lock.json') }}
+#        cache: maven
         - name: Build with Maven
           run: mvn -B package --file pom.xml
   deploy:
@@ -100,3 +100,4 @@ jobs:
       steps:
         - name: Print context
           run: echo "${{ toJSON(github.event) }}"
+
