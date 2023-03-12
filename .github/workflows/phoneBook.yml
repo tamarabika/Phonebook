@@ -18,6 +18,7 @@ jobs:
                  with:
                    java-version: '11'
                    distribution: 'temurin'
+                   cache: maven
         - name: Cache deps
               uses: actions/cache@v3
               with:
@@ -42,6 +43,7 @@ jobs:
                   with:
                     java-version: '11'
                     distribution: 'temurin'
+                    cache: maven
           - name: Cache deps
                 uses: actions/cache@v3
                 with:
@@ -66,6 +68,7 @@ jobs:
                 with:
                   java-version: '11'
                   distribution: 'temurin'
+                  cache: maven
       - name: Install dependencies
         run: npm ci
       - name: Build project
