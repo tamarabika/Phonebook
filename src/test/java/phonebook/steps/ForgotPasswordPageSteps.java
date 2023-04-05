@@ -51,5 +51,3 @@ public class ForgotPasswordPageSteps extends BaseSteps {
         forgotPasswordPage.iSeeEmailMsg(msg);
     }
 }
-
-

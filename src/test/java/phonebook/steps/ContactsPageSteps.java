@@ -143,5 +143,3 @@ public class ContactsPageSteps extends BaseSteps {
 
     }
 }
-
-

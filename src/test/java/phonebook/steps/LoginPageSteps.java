@@ -96,5 +96,4 @@ public class LoginPageSteps extends BaseSteps {
     public void iSeeLoginPage() {
         loginPage.iSeeLoginPage();
     }
-
 }
